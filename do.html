@@ -1,0 +1,43 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Espace DO</title>
+<link rel="stylesheet" href="style.css" />
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#1E3A8A" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" content="RelaiVTC" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="app.js" defer></script>
+</head><body>
+<main class="container page-box">
+<header class="page-header">
+  <div><h1 class="logo"><span class="relai">Relai</span><span class="vtc">VTC</span></h1><h2>Espace DO</h2><div class="live-pill">Live activé • secours manuel disponible</div></div>
+  <div class="header-actions"><button class="btn-refresh" onclick="softRefreshDO()">🔄 Rafraîchir</button><button class="btn-light" onclick="logout()">Déconnexion</button></div>
+</header>
+<section class="card">
+  <h3>Nouvelle mission</h3>
+  <div class="grid-two">
+    <input id="client_first_name" type="text" placeholder="Prénom client" />
+    <input id="client_last_name" type="text" placeholder="Nom client" />
+    <input id="passenger_count" type="number" min="1" step="1" placeholder="Nombre de passagers" />
+    <input id="luggage_count" type="number" min="0" step="1" placeholder="Nombre de bagages" />
+    <input id="pickup_address" type="text" placeholder="Adresse de départ" />
+    <input id="destination_address" type="text" placeholder="Adresse de destination" />
+    <input id="pickup_datetime" type="datetime-local" />
+    <select id="vehicle_category"><option value="">Gamme véhicule</option><option value="eco">Eco</option><option value="berline">Berline</option><option value="break">Break</option><option value="business">Business</option><option value="van">Van</option></select>
+  </div>
+  <label class="switch-line"><input id="is_mise_a_disposition" type="checkbox" onchange="toggleMiseADisposition()" /><span>Mise à disposition</span></label>
+  <div id="mise_a_disposition_box" class="hidden"><input id="mise_a_disposition_hours" type="number" min="1" step="1" placeholder="Durée en heures" /></div>
+  <div class="grid-two">
+    <select id="payment_mode"><option value="bord">Paiement à bord</option><option value="compte">Paiement en compte</option><option value="facture">Paiement sur facture</option></select>
+    <input id="fare_amount" type="number" placeholder="Montant course" />
+    <select id="do_commission_type"><option value="fixed">Commission DO fixe</option><option value="percentage">Commission DO %</option></select>
+    <input id="do_commission_value" type="number" placeholder="Valeur commission DO" />
+  </div>
+  <div class="action-row"><button class="btn-blue" onclick="previewMission()">Calculer</button><button class="btn-green" onclick="saveMission()">Enregistrer la course</button></div>
+  <div class="summary-box"><p>Montant course : <span id="show_fare">0.00 €</span></p><p>Commission DO : <span id="show_do_commission">0.00 €</span></p><p>Commission RelaiVTC : <span id="show_relai_fee">0.00 €</span></p><p>Commission globale : <span id="show_global_commission">0.00 €</span></p><p>Net chauffeur : <span id="show_driver_net">0.00 €</span></p></div>
+  <p id="do_message" class="message"></p>
+</section>
+<section class="card"><div class="section-head"><h3>Chauffeurs proches disponibles</h3><button class="btn-soft" onclick="loadNearbyDrivers()">Actualiser proximité</button></div><div id="nearby_drivers_list"></div></section>
+<section class="card"><div class="section-head"><h3>Mes missions actives</h3><button class="btn-soft" onclick="softRefreshDO()">Actualiser missions</button></div><div id="do_missions_list"></div></section>
+</main>
+</body></html>

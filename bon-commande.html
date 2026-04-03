@@ -1,0 +1,15 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Bon de commande transport</title>
+<link rel="stylesheet" href="style.css" />
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#1E3A8A" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" content="RelaiVTC" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="app.js" defer></script>
+</head><body>
+<main class="container page-box">
+<header class="page-header"><div><h1 class="logo"><span class="relai">Relai</span><span class="vtc">VTC</span></h1><h2>Bon de commande transport</h2></div><div class="header-actions"><button class="btn-refresh" onclick="refreshPage()">🔄 Rafraîchir</button><button class="btn-light" onclick="window.history.back()">Retour</button></div></header>
+<section class="card printable-card"><div id="order_content"><p class="muted">Chargement…</p></div><div class="mission-actions"><button class="btn-blue" onclick="window.print()">Imprimer / PDF</button><button class="btn-light" onclick="window.history.back()">Fermer</button></div></section>
+</main>
+</body></html>
