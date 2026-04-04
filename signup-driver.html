@@ -1,4 +1,10 @@
-<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Inscription chauffeur</title>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>signup-driver.html</title>
+
 <link rel="stylesheet" href="style.css" />
 <link rel="manifest" href="manifest.json" />
 <meta name="theme-color" content="#1E3A8A" />
@@ -7,20 +13,30 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="app.js" defer></script>
-</head><body>
+
+</head>
+<body>
+
 <main class="container auth-box">
   <h1 class="logo"><span class="relai">Relai</span><span class="vtc">VTC</span></h1>
   <p class="subtitle">Inscription chauffeur</p>
   <input id="signup_driver_email" type="email" placeholder="Email" />
-  <div class="password-row"><input id="signup_driver_password" type="password" placeholder="Mot de passe" /><button type="button" class="toggle-pass" onclick="togglePassword('signup_driver_password', this)">👁</button></div>
+  <div class="password-row">
+    <input id="signup_driver_password" type="password" placeholder="Mot de passe" />
+    <button type="button" class="toggle-pass" onclick="togglePassword('signup_driver_password', this)">👁</button>
+  </div>
   <input id="signup_driver_first_name" type="text" placeholder="Prénom" />
   <input id="signup_driver_last_name" type="text" placeholder="Nom" />
   <input id="signup_driver_phone" type="tel" placeholder="Téléphone" />
-  <select id="signup_driver_vehicle_category"><option value="">Gamme véhicule</option><option value="eco">Eco</option><option value="berline">Berline</option><option value="break">Break</option><option value="business">Business</option><option value="van">Van</option></select>
+  <select id="signup_driver_vehicle_category">
+    <option value="">Gamme véhicule</option><option value="eco">Eco</option><option value="berline">Berline</option><option value="break">Break</option><option value="business">Business</option><option value="van">Van</option>
+  </select>
   <input id="signup_driver_vehicle_brand" type="text" placeholder="Marque du véhicule" />
   <input id="signup_driver_plate_number" type="text" placeholder="Immatriculation" />
   <button class="btn-green" onclick="signupDriver()">Créer un compte chauffeur</button>
   <p id="signup_driver_message" class="message"></p>
   <a class="back-link" href="index.html">Retour connexion</a>
 </main>
-</body></html>
+
+</body>
+</html>

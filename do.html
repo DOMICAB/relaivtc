@@ -1,4 +1,10 @@
-<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Espace DO</title>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>do.html</title>
+
 <link rel="stylesheet" href="style.css" />
 <link rel="manifest" href="manifest.json" />
 <meta name="theme-color" content="#1E3A8A" />
@@ -7,12 +13,16 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="app.js" defer></script>
-</head><body>
+
+</head>
+<body>
+
 <main class="container page-box">
 <header class="page-header">
-  <div><h1 class="logo"><span class="relai">Relai</span><span class="vtc">VTC</span></h1><h2>Espace DO</h2><div class="live-pill">Live activé • secours manuel disponible</div></div>
+  <div><h1 class="logo"><span class="relai">Relai</span><span class="vtc">VTC</span></h1><h2>Espace DO</h2><div class="live-pill">Live + auto-refresh secours + refresh manuel</div></div>
   <div class="header-actions"><button class="btn-refresh" onclick="softRefreshDO()">🔄 Rafraîchir</button><button class="btn-light" onclick="logout()">Déconnexion</button></div>
 </header>
+
 <section class="card">
   <h3>Nouvelle mission</h3>
   <div class="grid-two">
@@ -37,7 +47,10 @@
   <div class="summary-box"><p>Montant course : <span id="show_fare">0.00 €</span></p><p>Commission DO : <span id="show_do_commission">0.00 €</span></p><p>Commission RelaiVTC : <span id="show_relai_fee">0.00 €</span></p><p>Commission globale : <span id="show_global_commission">0.00 €</span></p><p>Net chauffeur : <span id="show_driver_net">0.00 €</span></p></div>
   <p id="do_message" class="message"></p>
 </section>
+
 <section class="card"><div class="section-head"><h3>Chauffeurs proches disponibles</h3><button class="btn-soft" onclick="loadNearbyDrivers()">Actualiser proximité</button></div><div id="nearby_drivers_list"></div></section>
-<section class="card"><div class="section-head"><h3>Mes missions actives</h3><button class="btn-soft" onclick="softRefreshDO()">Actualiser missions</button></div><div id="do_missions_list"></div></section>
+<section class="card"><div class="section-head"><h3>Mes missions actives</h3><button class="btn-soft" onclick="softRefreshDO()">Actualiser missions</button></div><div id="do_sync_status" class="sync-badge">Synchro en attente</div><div id="do_missions_list"></div></section>
 </main>
-</body></html>
+
+</body>
+</html>
