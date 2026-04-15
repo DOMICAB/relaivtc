@@ -1,1 +1,0 @@
-Pack maître V5.1 complet corrigé\n- app.js non minifié\n- DO live + auto-refresh secours\n- chauffeur/admin live + secours\n- GitHub Pages friendly\n- SQL prêt à coller : supabase-pack-maitre-v5.1.sql\n
