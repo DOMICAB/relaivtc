@@ -89,3 +89,32 @@ document.addEventListener('DOMContentLoaded', () => {
   bindModeSwitch();
   initSimpleChrono();
 });
+async function loadMissions() {
+  const { data, error } = await supabase
+    .from('missions')
+    .select('*')
+    .eq('status', 'broadcasted');
+
+  if (error) {
+    console.error(error);
+    return;
+  }
+
+  const container = document.querySelector('#driver-courses-list');
+  if (!container) return;
+
+  container.innerHTML = '';
+
+  data.forEach(mission => {
+    const card = document.createElement('div');
+    card.className = 'card';
+
+    card.innerHTML = `
+      <div><strong>${mission.pickup}</strong> → ${mission.dropoff}</div>
+      <div>${mission.price} €</div>
+      <button onclick="acceptMission('${mission.id}')">Accepter</button>
+    `;
+
+    container.appendChild(card);
+  });
+}
