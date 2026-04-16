@@ -1,6 +1,7 @@
 const supabaseUrl = "https://oxmzxxlsjehucmnptbug.supabase.co";
 const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im94bXp4eGxzamVodWNtbnB0YnVnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYyOTgyOTQsImV4cCI6MjA5MTg3NDI5NH0.JzRzfQAJIaAKo8i-PrzsN6ZVckHGOWY4O_G9CjStWxw";
 const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);function setupTabs() {
+  
   document.querySelectorAll('[data-tab-group]').forEach(group => {
     const groupName = group.getAttribute('data-tab-group');
     const buttons = document.querySelectorAll(`[data-tab-btn="${groupName}"]`);
