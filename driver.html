@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RelaiVTC • Chauffeur</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="driver-app">
+  <header class="topbar">
+    <div>
+      <div class="brand">RelaiVTC</div>
+      <div class="subtitle">Espace chauffeur</div>
+    </div>
+    <div class="badge ok">Disponible</div>
+  </header>
+
+  <main data-tab-group="driver">
+    <section id="driver-courses" class="screen active" data-tab-screen="driver">
+      <h1>Courses</h1>
+
+      <article class="mission-card broadcast">
+        <div class="badge-row">
+          <span class="badge urgent">IMMÉDIAT</span>
+          <span class="helper">Maintenant</span>
+        </div>
+        <div class="route">
+          <div class="pickup">📍 Gare du Nord</div>
+          <div class="dropoff">➡️ Versailles</div>
+        </div>
+        <div class="meta">
+          <span>👤 2 passagers</span>
+          <span>🧳 2 bagages</span>
+          <span>🚗 Berline</span>
+        </div>
+        <div class="financials">
+          <span class="fare">30 €</span>
+          <span class="payment">À bord</span>
+        </div>
+        <button class="primary-btn">Accepter</button>
+      </article>
+
+      <article class="mission-card broadcast">
+        <div class="badge-row">
+          <span class="badge scheduled">RÉSERVATION</span>
+          <span class="helper">15/04 • 09:35</span>
+        </div>
+        <div class="route">
+          <div class="pickup">📍 Gare de Lyon</div>
+          <div class="dropoff">➡️ CDG</div>
+        </div>
+        <div class="meta">
+          <span>👤 1 passager</span>
+          <span>🧳 1 bagage</span>
+          <span>🚗 Berline</span>
+        </div>
+        <div class="financials">
+          <span class="fare">45 €</span>
+          <span class="payment">Pris en charge</span>
+        </div>
+        <button class="primary-btn">Accepter</button>
+      </article>
+    </section>
+
+    <section id="driver-missions" class="screen" data-tab-screen="driver">
+      <h1>Mes missions</h1>
+
+      <article class="mission-card assigned">
+        <div class="status-line">Statut : Mission attribuée</div>
+        <div class="contact-block">
+          <div>Client : M. Karim</div>
+          <button class="secondary-btn small">📞 Client</button>
+        </div>
+        <div class="contact-block">
+          <div>DO : Dispatch Pro</div>
+          <button class="secondary-btn small">📞 DO</button>
+        </div>
+        <div class="route">
+          <div class="pickup">📍 Gare du Nord</div>
+          <div class="dropoff">➡️ Versailles</div>
+        </div>
+        <div class="meta">
+          <span>👤 2 passagers</span>
+          <span>🧳 2 bagages</span>
+          <span>🚗 Berline</span>
+        </div>
+        <div class="financials">
+          <span class="fare">30 €</span>
+          <span class="payment">Pris en charge</span>
+        </div>
+        <div class="actions">
+          <button class="secondary-btn">📄 Bon de commande</button>
+          <button class="secondary-btn">🧭 Naviguer</button>
+          <button class="primary-btn" data-next-status="en_route">En route</button>
+        </div>
+        <div class="panel waiting-panel hidden" style="margin-top:12px;">
+          <div><strong>Attente sur place</strong></div>
+          <div>Chrono : <span data-chrono>00:00</span></div>
+          <div class="helper">15 min gratuites puis attente facturable</div>
+          <div class="actions" style="margin-top:10px;">
+            <button class="secondary-btn small">📞 Client</button>
+            <button class="secondary-btn small">📞 DO</button>
+            <button class="danger-btn small hidden" data-after-free>Client absent</button>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="driver-wallet" class="screen" data-tab-screen="driver">
+      <h1>Wallet</h1>
+      <div class="wallet-summary">
+        <div>À reverser : <strong>37 €</strong></div>
+        <div>Déjà reversé : <strong>112 €</strong></div>
+        <div>Net estimé : <strong>846 €</strong></div>
+      </div>
+      <article class="wallet-entry">
+        <div>15/04 • Gare du Nord → Versailles</div>
+        <div>30 € • À bord</div>
+        <div>Commission : 3 €</div>
+        <div class="status to-pay">À reverser</div>
+      </article>
+      <article class="wallet-entry">
+        <div>15/04 • CDG → Paris 17</div>
+        <div>45 € • Pris en charge</div>
+        <div>Commission : 0 €</div>
+        <div class="status no-action">Sans action</div>
+      </article>
+    </section>
+
+    <section id="driver-profile" class="screen" data-tab-screen="driver">
+      <h1>Profil</h1>
+      <div class="profile-card">
+        <div><strong>Nom :</strong> Karim B.</div>
+        <div><strong>Téléphone :</strong> 06 XX XX XX XX</div>
+        <div><strong>Gamme :</strong> Berline</div>
+        <div><strong>Places :</strong> 4</div>
+        <div><strong>Bagages :</strong> 2</div>
+      </div>
+      <div class="actions" style="margin-top:12px;">
+        <button class="danger-btn">Déconnexion</button>
+      </div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <button class="active" data-tab-btn="driver" data-target="driver-courses">Courses</button>
+    <button data-tab-btn="driver" data-target="driver-missions">Missions</button>
+    <button data-tab-btn="driver" data-target="driver-wallet">Wallet</button>
+    <button data-tab-btn="driver" data-target="driver-profile">Profil</button>
+  </nav>
+
+  <script src="app.js"></script>
+</body>
+</html>

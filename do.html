@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RelaiVTC • DO</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="do-app">
+  <header class="topbar">
+    <div>
+      <div class="brand">RelaiVTC DO</div>
+      <div class="subtitle">Dispatch Pro</div>
+    </div>
+    <div class="segmented" data-mode-switch data-mode-target="#do-shell">
+      <button class="active" data-mode="do">Mode DO</button>
+      <button data-mode="driver">Mode Chauffeur</button>
+    </div>
+  </header>
+
+  <main id="do-shell" data-mode="do" data-tab-group="do">
+    <section id="do-create" class="screen active" data-tab-screen="do">
+      <h1>Créer une course</h1>
+      <div class="form-card">
+        <form class="form-grid">
+          <div class="inline-grid">
+            <div>
+              <label>Type</label>
+              <select><option>Immédiat</option><option>Réservation</option></select>
+            </div>
+            <div>
+              <label>Date / heure</label>
+              <input type="datetime-local" />
+            </div>
+          </div>
+
+          <div>
+            <label>Départ</label>
+            <input type="text" placeholder="Adresse de départ" />
+          </div>
+
+          <div>
+            <label>Destination</label>
+            <input type="text" placeholder="Adresse d'arrivée" />
+          </div>
+
+          <div class="inline-grid">
+            <div>
+              <label>Passagers</label>
+              <input type="number" min="1" value="1" />
+            </div>
+            <div>
+              <label>Bagages</label>
+              <input type="number" min="0" value="0" />
+            </div>
+          </div>
+
+          <div class="inline-grid">
+            <div>
+              <label>Véhicule</label>
+              <select><option>Berline</option><option>Van</option><option>Business</option></select>
+            </div>
+            <div>
+              <label>Paiement</label>
+              <select><option>À bord</option><option>En compte</option><option>Déjà réglé</option></select>
+            </div>
+          </div>
+
+          <div class="inline-grid">
+            <div>
+              <label>Tarif</label>
+              <input type="number" step="0.01" placeholder="30.00" />
+            </div>
+            <div>
+              <label>Téléphone client</label>
+              <input type="tel" placeholder="06..." />
+            </div>
+          </div>
+
+          <div>
+            <label>Nom client</label>
+            <input type="text" placeholder="Nom du client" />
+          </div>
+
+          <div>
+            <label>Notes</label>
+            <textarea placeholder="Consignes, bagages spéciaux, etc."></textarea>
+          </div>
+
+          <button class="primary-btn" type="button">Diffuser la course</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="do-active" class="screen" data-tab-screen="do">
+      <h1>En cours</h1>
+      <article class="mission-card">
+        <div class="badge-row">
+          <span class="badge urgent">IMMÉDIAT</span>
+          <span class="helper">3 candidats</span>
+        </div>
+        <div class="route">
+          <div class="pickup">📍 Gare du Nord</div>
+          <div class="dropoff">➡️ Versailles</div>
+        </div>
+        <div class="meta">
+          <span>👤 2 passagers</span>
+          <span>🧳 2 bagages</span>
+          <span>🚗 Berline</span>
+        </div>
+        <div class="financials">
+          <span class="fare">30 €</span>
+          <span class="payment">À bord</span>
+        </div>
+        <div class="panel" style="margin-top:12px;">
+          <div><strong>Chauffeurs candidats</strong></div>
+          <div class="list-card" style="margin-top:10px; padding:12px; border-radius:12px; background:#fff; border:1px solid var(--border);">
+            <div class="row-between"><span>Karim • 1,2 km • 4 min</span><button class="primary-btn small">Sélectionner</button></div>
+          </div>
+          <div class="list-card" style="margin-top:10px; padding:12px; border-radius:12px; background:#fff; border:1px solid var(--border);">
+            <div class="row-between"><span>Nabil • 2,8 km • 7 min</span><button class="primary-btn small">Sélectionner</button></div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="do-history" class="screen" data-tab-screen="do">
+      <h1>Historique</h1>
+      <article class="history-entry">
+        <div>15/04 • CDG → Paris 17</div>
+        <div>45 € • Terminée</div>
+      </article>
+      <article class="history-entry">
+        <div>15/04 • Gare du Nord → Versailles</div>
+        <div>30 € • Annulée</div>
+      </article>
+    </section>
+
+    <section id="do-account" class="screen" data-tab-screen="do">
+      <h1>Compte</h1>
+      <div class="profile-card">
+        <div><strong>Société :</strong> Dispatch Pro</div>
+        <div><strong>Téléphone :</strong> 07 XX XX XX XX</div>
+        <div><strong>Commission DO :</strong> 4 %</div>
+      </div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <button class="active" data-tab-btn="do" data-target="do-create">Créer</button>
+    <button data-tab-btn="do" data-target="do-active">En cours</button>
+    <button data-tab-btn="do" data-target="do-history">Historique</button>
+    <button data-tab-btn="do" data-target="do-account">Compte</button>
+  </nav>
+
+  <script src="app.js"></script>
+</body>
+</html>

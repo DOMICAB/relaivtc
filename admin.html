@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RelaiVTC • Admin</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="admin-app">
+  <header class="topbar">
+    <div>
+      <div class="brand">RelaiVTC Admin</div>
+      <div class="subtitle">Supervision</div>
+    </div>
+    <button class="icon-btn">👤</button>
+  </header>
+
+  <main data-tab-group="admin">
+    <section id="admin-dashboard" class="screen active" data-tab-screen="admin">
+      <h1>Dashboard</h1>
+      <div class="stats-grid">
+        <div class="stat-card">Missions actives : 12</div>
+        <div class="stat-card">DO actifs : 5</div>
+        <div class="stat-card">Chauffeurs disponibles : 18</div>
+      </div>
+    </section>
+
+    <section id="admin-missions" class="screen" data-tab-screen="admin">
+      <h1>Missions</h1>
+      <article class="mission-card">
+        <div class="badge-row">
+          <span class="badge ok">ASSIGNÉE</span>
+          <span class="helper">Dispatch Pro</span>
+        </div>
+        <div class="route">
+          <div class="pickup">📍 Gare du Nord</div>
+          <div class="dropoff">➡️ Versailles</div>
+        </div>
+        <div class="financials">
+          <span class="fare">30 €</span>
+          <span class="payment">À bord</span>
+        </div>
+        <div class="actions">
+          <button class="secondary-btn">Ouvrir</button>
+          <button class="danger-btn">Annuler</button>
+        </div>
+      </article>
+    </section>
+
+    <section id="admin-users" class="screen" data-tab-screen="admin">
+      <h1>Utilisateurs</h1>
+      <article class="user-card">
+        <div><strong>Karim B.</strong></div>
+        <div>Rôles : Chauffeur</div>
+        <div class="actions" style="margin-top:10px;">
+          <button class="secondary-btn small">Ajouter rôle DO</button>
+          <button class="secondary-btn small">Valider</button>
+        </div>
+      </article>
+    </section>
+
+    <section id="admin-finance" class="screen" data-tab-screen="admin">
+      <h1>Finance</h1>
+      <article class="finance-card">
+        <div><strong>Mission #RVTC-123</strong></div>
+        <div>Plateforme : 3 €</div>
+        <div>DO : 2 €</div>
+        <div>Chauffeur net : 45 €</div>
+      </article>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <button class="active" data-tab-btn="admin" data-target="admin-dashboard">Dashboard</button>
+    <button data-tab-btn="admin" data-target="admin-missions">Missions</button>
+    <button data-tab-btn="admin" data-target="admin-users">Utilisateurs</button>
+    <button data-tab-btn="admin" data-target="admin-finance">Finance</button>
+  </nav>
+
+  <script src="app.js"></script>
+</body>
+</html>

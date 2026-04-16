@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RelaiVTC • Passager</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="passenger-app">
+  <header class="topbar">
+    <div>
+      <div class="brand">RelaiVTC</div>
+      <div class="subtitle">Réservation passager</div>
+    </div>
+    <button class="icon-btn">👤</button>
+  </header>
+
+  <main data-tab-group="passenger">
+    <section id="passenger-book" class="screen active" data-tab-screen="passenger">
+      <h1>Réserver</h1>
+      <div class="form-card">
+        <form class="form-grid">
+          <div>
+            <label>Départ</label>
+            <input type="text" placeholder="Votre adresse de départ" />
+          </div>
+          <div>
+            <label>Destination</label>
+            <input type="text" placeholder="Votre destination" />
+          </div>
+          <div class="inline-grid">
+            <div>
+              <label>Quand</label>
+              <select><option>Maintenant</option><option>Plus tard</option></select>
+            </div>
+            <div>
+              <label>Véhicule</label>
+              <select><option>Berline</option><option>Van</option><option>Business</option></select>
+            </div>
+          </div>
+          <div class="inline-grid">
+            <div>
+              <label>Passagers</label>
+              <input type="number" min="1" value="1" />
+            </div>
+            <div>
+              <label>Bagages</label>
+              <input type="number" min="0" value="0" />
+            </div>
+          </div>
+          <div class="estimate-box">Estimation : <strong>32 €</strong></div>
+          <button class="primary-btn" type="button">Réserver</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="passenger-trips" class="screen" data-tab-screen="passenger">
+      <h1>Mes courses</h1>
+      <article class="mission-card">
+        <div class="status-line">Statut : Recherche d’un chauffeur</div>
+        <div class="route">
+          <div class="pickup">📍 Gare du Nord</div>
+          <div class="dropoff">➡️ Versailles</div>
+        </div>
+        <div class="financials">
+          <span class="fare">32 €</span>
+          <span class="payment">À bord</span>
+        </div>
+      </article>
+    </section>
+
+    <section id="passenger-profile" class="screen" data-tab-screen="passenger">
+      <h1>Mon profil</h1>
+      <div class="profile-card">
+        <div><strong>Nom :</strong> Karim</div>
+        <div><strong>Téléphone :</strong> 06 XX XX XX XX</div>
+      </div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <button class="active" data-tab-btn="passenger" data-target="passenger-book">Réserver</button>
+    <button data-tab-btn="passenger" data-target="passenger-trips">Mes courses</button>
+    <button data-tab-btn="passenger" data-target="passenger-profile">Profil</button>
+  </nav>
+
+  <script src="app.js"></script>
+</body>
+</html>
