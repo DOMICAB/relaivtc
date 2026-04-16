@@ -88,6 +88,8 @@ document.addEventListener('DOMContentLoaded', () => {
   bindDriverStatusFlow();
   bindModeSwitch();
   initSimpleChrono();
+
+  loadMissions(); // 👈 AJOUT ICI
 });
 async function loadMissions() {
   const { data, error } = await supabase
